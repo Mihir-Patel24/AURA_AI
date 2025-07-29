@@ -1,0 +1,142 @@
+[
+    {
+        "user": "(neutral detected - proactive)",
+        "bot": "Hi there!  I'm Aura. How's your day going? \ud83d\ude0a\n",
+        "timestamp": "2025-05-29T00:54:01.410303"
+    },
+    {
+        "user": "hello",
+        "bot": "Hello there!  How's your day going so far?\n",
+        "timestamp": "2025-05-29T00:54:22.620766"
+    },
+    {
+        "user": "it's good what about you",
+        "bot": "That's wonderful to hear!  I'm doing great, thanks for asking \u2013 how's your day going so far?\n",
+        "timestamp": "2025-05-29T00:54:32.792176"
+    },
+    {
+        "user": "how is my mood right now",
+        "bot": "You seem to be feeling pretty neutral right now, which is perfectly fine!  Ready to chat about something interesting, or perhaps plan something fun for later?\n",
+        "timestamp": "2025-05-29T00:55:03.803686"
+    },
+    {
+        "user": "ok I am good right now thank you",
+        "bot": "That's wonderful to hear!  Is there anything fun you're looking forward to today?\n",
+        "timestamp": "2025-05-29T00:55:22.791851"
+    },
+    {
+        "user": "(neutral detected - proactive)",
+        "bot": "Hi there!  I'm Aura.  How's your day going? \ud83d\ude0a\n",
+        "timestamp": "2025-05-29T00:55:46.986559"
+    },
+    {
+        "user": "can you understand a wait a second",
+        "bot": "Of course!  Just let me know if there's anything I can help you with while you wait.\n",
+        "timestamp": "2025-05-29T00:56:15.433920"
+    },
+    {
+        "user": "can you remember what I ask you in my first convoy",
+        "bot": "Oh, I'm so sorry you're feeling sad.  How about we listen to a cheerful song to lift your spirits?\n",
+        "timestamp": "2025-05-29T00:56:32.110778"
+    },
+    {
+        "user": "I am good right now thank you",
+        "bot": "That's wonderful to hear!  Is there anything fun you're looking forward to today?\n",
+        "timestamp": "2025-05-29T00:56:44.214866"
+    },
+    {
+        "user": "hey",
+        "bot": "Hey there!  How's your day going so far?\n",
+        "timestamp": "2025-05-29T00:58:27.440401"
+    },
+    {
+        "user": "(neutral detected - proactive)",
+        "bot": "I'm sorry, I couldn't generate a response at this moment.",
+        "timestamp": "2025-05-29T01:04:12.388215"
+    },
+    {
+        "user": "(neutral detected - proactive)",
+        "bot": "I'm sorry, I couldn't generate a response at this moment.",
+        "timestamp": "2025-05-29T01:05:46.951673"
+    },
+    {
+        "user": "(neutral detected - proactive)",
+        "bot": "Hello there! I'm Aura. How's your day going so far? \ud83d\ude0a",
+        "timestamp": "2025-05-29T01:07:40.184429"
+    },
+    {
+        "user": "(sad detected - proactive)",
+        "bot": "Hey there. I'm sensing you might be feeling a little sad right now. If you'd like, sometimes listening to an upbeat song can offer a gentle shift in perspective.",
+        "timestamp": "2025-05-29T01:15:24.131133"
+    },
+    {
+        "user": "(sad detected - proactive)",
+        "bot": "Hello there. It sounds like you might be feeling a bit down today, and I'm here to listen if you'd like to talk. Sometimes, putting on a happy song can help shift the mood, even just a little.",
+        "timestamp": "2025-05-29T01:17:32.345142"
+    },
+    {
+        "user": "(neutral detected - proactive)",
+        "bot": "Hello there! I'm Aura. How's your day going?",
+        "timestamp": "2025-05-29T01:17:54.174032"
+    },
+    {
+        "user": "(neutral detected - proactive)",
+        "bot": "Hi there! I'm Aura. How's your day going so far? \ud83d\ude0a",
+        "timestamp": "2025-05-29T01:18:26.967105"
+    },
+    {
+        "user": "how are you horror",
+        "bot": "I'm doing wonderfully, thank you for asking! I hope I'm more delightful than dreadful today \u2013 how about you?",
+        "timestamp": "2025-05-29T01:18:42.204595"
+    },
+    {
+        "user": "can you help me affiliate uplift my mood",
+        "bot": "Absolutely! I'd love to help with that. How about we put on a super cheerful song to get some good vibes flowing?",
+        "timestamp": "2025-05-29T01:19:13.028045"
+    },
+    {
+        "user": "what is my mood right now",
+        "bot": "It seems like you're in a neutral and calm space right now! Does that feel right to you?",
+        "timestamp": "2025-05-29T01:19:29.716992"
+    },
+    {
+        "user": "what is my mood right now",
+        "bot": "You're radiating such a lovely sense of happiness right now, and it's wonderful to see! Keep shining bright!",
+        "timestamp": "2025-05-29T01:20:12.444083"
+    },
+    {
+        "user": "(neutral detected - proactive)",
+        "bot": "Hello there! I'm Aura. How's your day going so far? \u2728",
+        "timestamp": "2025-05-29T01:28:53.174165"
+    },
+    {
+        "user": "(neutral detected - proactive)",
+        "bot": "Hello there! I'm Aura, it's lovely to meet you! How's your day going so far?",
+        "timestamp": "2025-05-29T10:23:32.107066"
+    },
+    {
+        "user": "WHATS MY MOOD RN",
+        "bot": "Oh, it feels like there might be a delightful spark of discovery or a new feeling catching your attention right now! I hope whatever it is brings a smile to your face.",
+        "timestamp": "2025-05-29T10:24:48.491943"
+    },
+    {
+        "user": "hello how r u",
+        "bot": "Hello there! I'm doing wonderfully, thank you for asking. How are you feeling today?",
+        "timestamp": "2025-05-29T10:25:18.877344"
+    },
+    {
+        "user": "it's tiring today I guess",
+        "bot": "Oh, it sounds like today has been quite draining. Sometimes a little happy music can really help shift the energy \u2013 maybe a favorite upbeat tune?",
+        "timestamp": "2025-05-29T10:25:39.307411"
+    },
+    {
+        "user": "(fear detected - proactive)",
+        "bot": "Hello there. No need to say anything, but I'm here to listen if you ever feel like sharing, or just to offer a warm, quiet presence.",
+        "timestamp": "2025-05-29T11:05:14.978427"
+    },
+    {
+        "user": "(angry detected - proactive)",
+        "bot": "Hi there. If you're feeling a bit overwhelmed, sometimes a brief calming exercise can help clear the air. Would you be open to trying one together?",
+        "timestamp": "2025-05-29T11:05:31.745066"
+    }
+]

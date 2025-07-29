@@ -1,0 +1,7 @@
+Flask
+deepface
+opencv-python-headless  # Use headless if you don't need GUI elements for OpenCV
+google-generativeai
+python-dotenv
+numpy # often a dependency for opencv/deepface
+Pillow # for image manipulation

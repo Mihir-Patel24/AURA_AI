@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Aura - {{ username }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="animated-shape shape1"></div>
+        <div class="animated-shape shape2"></div>
+        <div class="animated-shape shape3"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-brain"></i> Aura AI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-username">
+                        <span class="nav-link">Welcome, {{ username }}!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('dashboard_page') }}"><i class="fas fa-chart-line"></i> Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#features-section"><i class="fas fa-star"></i> Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-section"><i class="fas fa-info-circle"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                    <li class="nav-item">
+                         <div class="dark-mode-toggle ms-2" id="darkModeToggle">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid page-container">
+        <div class="container">
+            <!-- Main App Section: Video and Chat -->
+            <section class="main-app-section mt-5 pt-4">
+                <div class="row g-4">
+                    <!-- Mood Detector Column -->
+                    <div class="col-lg-5">
+                        <div class="app-card mood-detector-card">
+                            <h2 class="app-card-title"><i class="fas fa-smile-beam"></i> Mood Detector</h2>
+                            <div class="video-container mb-3">
+                                <video id="videoFeed" autoplay playsinline muted class="border rounded"></video> <!-- ID for JS -->
+                                <canvas id="canvas" style="display:none;"></canvas> <!-- ID for JS -->
+                            </div>
+                            <div class="mood-display text-center">
+                                <h3>Current Mood: <span id="moodText" class="badge bg-primary mood-badge">Detecting...</span></h3> <!-- ID for JS -->
+                            </div>
+                            <p id="mood-suggestion" class="text-center fst-italic mt-2"></p> <!-- For potential suggestions from DeepFace or simple ones -->
+                        </div>
+                    </div>
+
+                    <!-- AI Assistant Column -->
+                    <div class="col-lg-7">
+                        <div class="app-card chat-assistant-card">
+                            <h2 class="app-card-title"><i class="fas fa-comments"></i> Aura Assistant</h2>
+                            <div id="chatbox" class="chat-messages-container mb-3"> <!-- ID for JS -->
+                                <!-- Messages will be appended here by script.js -->
+                            </div>
+                            <div class="chat-input-area">
+                                <div class="input-group">
+                                    <input type="text" id="userInput" class="form-control" placeholder="Type your message or use voice..."> <!-- ID for JS -->
+                                    <button id="voiceButton" class="btn btn-secondary" type="button" title="Speak your message"><i class="fas fa-microphone"></i></button> <!-- ID for JS -->
+                                    <button id="sendButton" class="btn btn-primary" type="button"><i class="fas fa-paper-plane"></i> Send</button> <!-- ID for JS -->
+                                </div>
+                                <p id="voiceStatus" class="form-text text-muted mt-1 text-center">Voice input: Inactive</p> <!-- ID for JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <audio id="songPlayer" style="display:none;"></audio> <!-- ID for JS -->
+                <div id="activitySuggestion" class="alert alert-info mt-3 d-none"></div> <!-- ID for JS, d-none to hide initially -->
+            </section>
+
+            <!-- Features Section -->
+            <section id="features-section" class="content-section">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Key Features</h2>
+                    <p class="section-subtitle">Discover what makes Aura AI unique</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card text-center">
+                            <i class="feature-icon fas fa-video"></i>
+                            <h3 class="feature-title">Live Mood Detection</h3>
+                            <p class="feature-description">Real-time emotion analysis from your video feed to understand how you're feeling.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card text-center">
+                            <i class="feature-icon fas fa-brain"></i>
+                            <h3 class="feature-title">Empathetic AI Chat</h3>
+                            <p class="feature-description">Aura adapts its conversation to help uplift your mood and provide support.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card text-center">
+                            <i class="feature-icon fas fa-music"></i>
+                            <h3 class="feature-title">Mood-based Activities</h3>
+                            <p class="feature-description">Triggers like playing uplifting music if you're sad or suggesting calming exercises.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about-section" class="content-section">
+                <div class="card about-card">
+                    <div class="card-header">
+                        <h2 class="section-title mb-0">About Aura AI</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Aura AI is designed to be an empathetic digital companion. Using cutting-edge AI for mood detection and natural language processing, Aura aims to provide meaningful interactions that adapt to your emotional state. Our goal is to create a supportive and uplifting experience, helping you navigate your feelings with a friendly AI by your side.</p>
+                        <p>Whether you need a moment of calm, a bit of cheer, or just someone to talk to, Aura is here to listen and respond thoughtfully.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i> Aura AI
+                    </div>
+                    <p>Experience empathetic AI.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="{{ url_for('chat_page') }}">Chat</a></li>
+                        <li><a href="{{ url_for('dashboard_page') }}">Dashboard</a></li>
+                        <li><a href="#features-section">Features</a></li>
+                        <li><a href="#about-section">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact (Placeholder)</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><i class="fas fa-envelope me-2"></i> contact@aura-ai.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>© <span id="currentYear"></span> Aura AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

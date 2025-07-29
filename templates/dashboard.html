@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Dashboard - {{ username }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="animated-shape shape1"></div>
+        <div class="animated-shape shape2"></div>
+        <div class="animated-shape shape3"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('chat_page') }}"><i class="fas fa-brain"></i> Aura AI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-username">
+                        <span class="nav-link">User: {{ username }}</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('chat_page') }}"><i class="fas fa-comments"></i> Back to Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                     <li class="nav-item">
+                         <div class="dark-mode-toggle ms-2" id="darkModeToggle">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container page-container">
+        <div class="dashboard-card app-card mt-5 pt-3">
+            <h1 class="text-center mb-4 section-title">Mood History for {{ username }}</h1>
+            {% if mood_history %}
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Mood</th>
+                                <th scope="col">Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for entry in mood_history | sort(attribute='timestamp', reverse=True) %}
+                            <tr>
+                                <td><span class="badge bg-info mood-badge-table">{{ entry.mood.capitalize() }}</span></td>
+                                <td class="timestamp-cell">{{ entry.timestamp.split('T')[0] }} {{ entry.timestamp.split('T')[1].split('.')[0] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="alert alert-info text-center" role="alert">
+                    No mood history recorded yet. Start chatting with Aura!
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <footer class="footer fixed-bottom">
+        <div class="container text-center">
+            <p>© <span id="currentYear"></span> Aura AI. Your Empathetic Companion.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- Basic shared JS -->
+</body>
+</html>
